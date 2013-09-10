@@ -41,7 +41,7 @@ class Basecamp {
 		$this->_oAuth = new OAuth($client_id,$client_secret);
 		$this->session_key = $session_key;
 		
-		if ( $_SESSION[$session_key]->access_token ) {
+		if ( isset($_SESSION[$session_key]) && isset($_SESSION[$session_key]->access_token) ) {
 			$this->access_token 	= $_SESSION[$session_key]->access_token;
 			$this->authenticated 	= true;
 		} 
